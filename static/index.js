@@ -15,12 +15,20 @@ loginForm.addEventListener("submit", async (event) => {
                 method: 'POST',
             }
         );
-        console.log(response.status);
+
+        if(response.status != 200)
+            return;
+
+        window.location.href = "/";
     }else {
         const response = await fetch(
             `http://localhost:3000/user/login/${user}/${pass}`
         )
-        console.log(response.status);
+
+        if(response.status != 200)
+            return;
+
+        window.location.href = "/";
     }
 })
 
@@ -124,7 +132,7 @@ deleteMessageForm.addEventListener("submit", async(event)=>{
     }
 })
 
-window.onload = async () => {
+const loadMessages = async () => {
     const response = await fetch(
         "http://localhost:3000/messages/getall"
     );
@@ -137,6 +145,26 @@ window.onload = async () => {
         const div = document.createElement('div');
         div.textContent = `${msg.username}: ${msg.content}`;
         msgFeed.appendChild(div);
-
     })
+}
+
+const checkCurrentUser = async () => {
+    const response = await fetch(
+        "http://localhost:3000/user/current"
+    );
+
+    if(response.status != 200)
+        return;
+
+    const { user } = await response.json();
+
+    if(!user)
+        return;
+
+    // ... load msg management, edit, del user, del msg
+}
+
+window.onload = () => {
+    loadMessages();
+    checkCurrentUser();
 }

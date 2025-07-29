@@ -1,13 +1,14 @@
 const express = require('express');
 const Sequelize = require('sequelize')
 
+const bodyParser = require('body-parser');
+const cookieParser = require("cookie-parser");
+
 const fs = require('node:fs');
 const path = require('node:path');
 
 const foldersPath = path.join(__dirname, 'endpoints');
 const commandFolders = fs.readdirSync(foldersPath);
-
-const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -29,6 +30,8 @@ const database = {
 }
 
 app.use(express.static('static'));
+app.use(cookieParser());
+
 app.use(bodyParser.urlencoded({ extended : false}))
 app.use(bodyParser.json())
 

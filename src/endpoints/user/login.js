@@ -11,6 +11,12 @@ module.exports = {
         if(!user)
            return res.sendStatus(404);
 
+        res.cookie("user", username, {
+            httpOnly: true,
+            sameSite: true,
+            maxAge: 3600 * 1000
+        });
+
         return res.sendStatus(200);
     }
 }
