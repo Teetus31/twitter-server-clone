@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .form-container {
+            max-width: 300px; /* Smaller width for forms */
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="password"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"], button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #45a049;
+        }
+        .message-feed {
+            max-width: 600px; /* Wider for message feed */
+            margin: auto;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .message:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login Form</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username1" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="regCheckbox">Register</label>
+            <input type="checkbox" id="regCheckbox" name="register">
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <div class="message-feed" id="messagesFeed">
+        <h2>Message Feed</h2>
+    </div>
+
+    <div class="form-container">
+        <h2>Message Management</h2>
+        <form id="messageForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username2" name="username" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <input type="submit" value="Add Message">
+        </form>
+
+        <h3>Edit Message</h3>
+        <form id="editMessageForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username4" name="username" required>
+            <label for="editMessageId">Message ID:</label>
+            <input type="text" id="editMessageId" name="editMessageId" required>
+            <label for="editMessage">New Message:</label>
+            <textarea id="editMessage" name="editMessage" rows="4" required></textarea>
+            <input type="submit" value="Edit Message">
+        </form>
+
+        <h3>Delete Message</h3>
+        <form id="deleteMessageForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username3" name="username" required>
+            <label for="deleteMessageId">Message ID:</label>
+            <input type="text" id="deleteMessageId" name="deleteMessageId" required>
+            <input type="submit" value="Delete Message">
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Delete User</h2>
+        <form id="deleteUserForm">
+            <label for="deleteUsername">Username:</label>
+            <input type="text" id="deleteUsername" name="deleteUsername" required>
+            <label for="deleteUsername">Password:</label>
+            <input type="text" id="deletePassword" name="deletePassword" required>
+
+            <input type="submit" value="Delete User">
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
