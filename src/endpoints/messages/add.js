@@ -1,12 +1,14 @@
 module.exports = {
     method: 'post',
-    endpoint: '/messages/add/:content/:username',
+    endpoint: '/messages/add/:content',
     cmd: async(db, req, res) => {
         const content = req.params.content;
-        const username = req.params.username;
+        const username = req.cookies.user || null;
+
+        if(!username)
+            return res.sendStatus(404);
 
         const user = await db.users.findOne({where: {username: username}})
-
         if(!user)
             return res.sendStatus(404);
 

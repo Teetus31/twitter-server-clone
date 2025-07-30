@@ -74,53 +74,12 @@
         </form>
     </div>
 
-    <div class="message-feed" id="messagesFeed">
+    <div class="form-container" id="messagesFeed">
         <h2>Message Feed</h2>
     </div>
 
-    <div class="form-container">
-        <h2>Message Management</h2>
-        <form id="messageForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username2" name="username" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <input type="submit" value="Add Message">
-        </form>
-
-        <h3>Edit Message</h3>
-        <form id="editMessageForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username4" name="username" required>
-            <label for="editMessageId">Message ID:</label>
-            <input type="text" id="editMessageId" name="editMessageId" required>
-            <label for="editMessage">New Message:</label>
-            <textarea id="editMessage" name="editMessage" rows="4" required></textarea>
-            <input type="submit" value="Edit Message">
-        </form>
-
-        <h3>Delete Message</h3>
-        <form id="deleteMessageForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username3" name="username" required>
-            <label for="deleteMessageId">Message ID:</label>
-            <input type="text" id="deleteMessageId" name="deleteMessageId" required>
-            <input type="submit" value="Delete Message">
-        </form>
-    </div>
-
-    <div class="form-container">
-        <h2>Delete User</h2>
-        <form id="deleteUserForm">
-            <label for="deleteUsername">Username:</label>
-            <input type="text" id="deleteUsername" name="deleteUsername" required>
-            <label for="deleteUsername">Password:</label>
-            <input type="text" id="deletePassword" name="deletePassword" required>
-
-            <input type="submit" value="Delete User">
-        </form>
-    </div>
+    <div class="form-container" id="formContainer"></div>
+    <div class="form-container" id="formContainer2"></div>
 
     <script src="index.js"></script>
 </body>
